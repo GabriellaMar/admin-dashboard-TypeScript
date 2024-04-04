@@ -19,3 +19,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           folder: dist
+          branch: gh-pages 
