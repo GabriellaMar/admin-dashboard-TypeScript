@@ -1,0 +1,55 @@
+@use '../../../styles/shared';
+
+.tittle {
+    font-family: "Inter", sans-serif;
+   font-weight: 600;
+   font-size: 28px;
+   line-height: calc(34/28);
+    color: shared.$primary-text-color;
+
+    span {
+        color: shared.$primary-color;  
+    }
+}
+
+.wrapper{
+    position: relative;
+    max-width: 335px;
+
+    @media  (min-width: 768px) {
+        max-width: 614px;
+    }
+   
+   
+}
+.loginPageImg {
+    position: absolute;
+    top: -54px;
+    right: 18px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+
+    button {
+        background-color: shared.$primary-color;
+        padding: 13px;
+        width: 335px;
+        color: white;
+        border: none;
+        border-radius: 60px;
+        margin-top: 40px;
+
+    }
+}
+
+.loginInput {
+    padding: 13px 18px;
+    border-radius: 60px;
+    width: 100%;
+
+    @media  (min-width: 768px) {
+        max-width: 614px;
+    }
+
+}

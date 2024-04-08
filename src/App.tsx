@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
 
-import FirstPage from './pages/FirstPage/FirstPage'
+import LoginPage from './pages/LoginPage/LoginPage'
 import SecondPage from './pages/SecondPage/SecondPage'
 
 
@@ -14,7 +14,7 @@ function App() {
   
        <Routes>
      
-      <Route path="/" element={<FirstPage/>} />
+      <Route path="/" element={<LoginPage />} />
       <Route path="/second" element={<SecondPage />} />
       {/* <Route path="*" element={<ErrorPage />} /> */}
     </Routes>
