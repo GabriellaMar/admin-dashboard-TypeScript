@@ -3,7 +3,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "paths": {
-      "@/*": ["./src/*"],
+      // "@/*": ["./src/*"],
       "pages/*": ["./src/pages/*"],
     },
     "target": "ES2020",

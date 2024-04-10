@@ -1,18 +1,19 @@
 @use '../../../styles/shared';
 
 .container {
-    @media (max-width: 375px) {width: 320px;
+    @media (min-width: 375px) {
+    width: 320px;
     padding: 0 20px;
     margin: 0 auto;
     }
     @media (min-width: 768px) {
       width: 768px;
-      padding: 0 20px;
+      padding: 0 32px;
       margin: 0 auto;
     }
     @media (min-width: 1440px) {
       width: 1440px;
-      padding: 0 20px;
+      padding: 0 40px;
       margin: 0 auto;
     }
 }

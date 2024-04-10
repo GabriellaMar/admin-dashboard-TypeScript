@@ -1,21 +1,30 @@
-import { Header } from "../../components/Header/Header";
+
 import logo from '../../assets/logo.png'
 import smallPill from '../../assets/white-round-pill.png'
+import bigPill from '../../assets/big-white-round-pill.png'
 import styles from './LoginPage.module.scss'
 import { Container } from "../../components/Container/Container";
+import { LoginForm } from "../../components/LoginPage/LoginForm/LoginForm";
+import useMediaQuery from '../../hooks/useMediaQuery';
+
+
 
 const LoginPage: React.FC = () => {
+  const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
 
     return (
      < Container>
         {/* <Header />  */}
-        <main>
-          <img src={logo} alt='Logo image'/>
+        <main >
+          <img className={styles.logoImg} src={logo} alt='Logo image'/>
+          <div className={styles.loginPageWrapper}>
           <div className={styles.wrapper}>
           <h1 className={styles.tittle}>Your medication, delivered Say goodbye to all <span>your healthcare</span> worries with us</h1>
-          <img className={styles.loginPageImg} src={smallPill} alt="white pill"/>
+          <img className={styles.loginPageImg} src={isAboveMediumScreens ? bigPill : smallPill} alt="white pill"/>
           </div>
-          <div>
+          <LoginForm />
+          </div>
+          {/* <div>
             <form className={styles.form}>
               <input className={styles.loginInput}
               type="email"
@@ -30,7 +39,7 @@ const LoginPage: React.FC = () => {
               />
               <button>Log in</button>
             </form>
-          </div>
+          </div> */}
         </main>
         </Container>
     )

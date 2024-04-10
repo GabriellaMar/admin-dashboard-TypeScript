@@ -1,5 +1,26 @@
 @use '../../../styles/shared';
 
+.loginPageWrapper {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 100vh;
+
+    @media  (min-width: 768px) {
+      gap: 50px;
+    }
+
+    @media  (min-width: 1440px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+      }
+}
+
+
+
 .tittle {
     font-family: "Inter", sans-serif;
    font-weight: 600;
@@ -10,6 +31,11 @@
     span {
         color: shared.$primary-color;  
     }
+
+    @media  (min-width: 768px) {
+        font-size: 54px;
+        line-height: calc(60/54);
+    }
 }
 
 .wrapper{
@@ -17,39 +43,93 @@
     max-width: 335px;
 
     @media  (min-width: 768px) {
-        max-width: 614px;
+    max-width: 614px;
     }
    
    
 }
 .loginPageImg {
     position: absolute;
-    top: -54px;
-    right: 18px;
+    top: -60px;
+    right: 8px;
+
+    @media  (min-width: 768px) {
+        top: -115px;
+        right: 12px;
+    }
+}
+
+.logoImg {
+    padding-top: 28px;
 }
 .form{
+    position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 335px;
+
+    .loginInput {
+      position: relative;
+        padding: 13px 18px;
+        width: 100%;
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: calc(18/12);
+
+        border-radius: 60px;
+        outline: none;
+        background: white;
+        border: 1px solid rgba(shared.$primary-text-color, 0.1); 
+}
+
+
+    .loginInput:not(:first-child){
+            margin-top: 14px;
+};
+    .loginInput:focus{
+        border-color: shared.$primary-color;
+    }
 
     button {
-        background-color: shared.$primary-color;
         padding: 13px;
-        width: 335px;
+        margin-top: 40px;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: calc(18/14);
+
+        background-color: shared.$primary-color;
         color: white;
         border: none;
         border-radius: 60px;
-        margin-top: 40px;
-
-    }
-}
-
-.loginInput {
-    padding: 13px 18px;
-    border-radius: 60px;
-    width: 100%;
-
-    @media  (min-width: 768px) {
-        max-width: 614px;
+        
+        &:hover {
+            background-color: shared.$focused-btn-color;
+            transition: 250ms ease-in-out;
+        }
     }
 
+    // @media  (min-width: 768px) {
+    //   max-width: 323px;
+    // }
 }
+
+.errorMessage{
+    margin-top: 3px;
+    color: red;
+    text-align: start;
+}
+.inputWrapper{
+    max-width: 335px;
+    position: relative;
+}
+.eyeIcon{
+    position: absolute;
+    bottom: 32px;
+    right: -16px;
+}
+
+
+  
