@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage'
 import SharedLayout from './pages/SharedLayout/SharedLayout'
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
