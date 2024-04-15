@@ -40,7 +40,7 @@
 
 .wrapper{
     position: relative;
-    max-width: 335px;
+    // max-width: 335px;
 
     @media  (min-width: 768px) {
     max-width: 614px;
@@ -66,13 +66,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 335px;
+    //  width: 100%;
+    width: 335px;
 
     .loginInput {
       position: relative;
         padding: 13px 18px;
-        width: 100%;
+        //   width: 100%;
+        // width: 335px;
         font-family: "Inter", sans-serif;
         font-weight: 400;
         font-size: 12px;
@@ -82,15 +83,17 @@
         outline: none;
         background: white;
         border: 1px solid rgba(shared.$primary-text-color, 0.1); 
-}
 
-
-    .loginInput:not(:first-child){
+       
+        &:not(:first-child){
             margin-top: 14px;
-};
-    .loginInput:focus{
+        };
+
+        &:focus{
         border-color: shared.$primary-color;
-    }
+        }
+
+}
 
     button {
         padding: 13px;
@@ -111,9 +114,10 @@
         }
     }
 
-    // @media  (min-width: 768px) {
-    //   max-width: 323px;
-    // }
+     @media  (min-width: 768px) {
+            width: 323px;
+          }
+    
 }
 
 .errorMessage{
@@ -121,10 +125,7 @@
     color: red;
     text-align: start;
 }
-.inputWrapper{
-    max-width: 335px;
-    position: relative;
-}
+
 .eyeIcon{
     position: absolute;
     bottom: 32px;

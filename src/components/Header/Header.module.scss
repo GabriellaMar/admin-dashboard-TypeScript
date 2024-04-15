@@ -1,8 +1,29 @@
+@use '../../../styles/shared';
 .header {
 display: flex;
-ul {
+align-items: center;
+gap: 20px;
+padding: 17px 0px;
+
+
+}
+
+.burgerIcon{
+    width: 32px;
+    height: 32px;
+}
+.linkWrapper{
     display: flex;
-    gap: 20px;
-    list-style: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(18/12);
+    color: shared.$primary-text-color;
 }
-}
+// .link{
+//     font-family: "Inter", sans-serif;
+//     font-weight: 400;
+//     font-size: 12px;
+//     line-height: calc(18/12);
+//     color: shared.$primary-text-color;
+// }

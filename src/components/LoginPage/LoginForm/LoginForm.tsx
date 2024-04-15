@@ -1,9 +1,15 @@
 import styles from '../../../pages/LoginPage/LoginPage.module.scss';
+import { Navigate } from 'react-router-dom';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import * as yup from 'yup';
 import { IoEyeOffOutline } from "react-icons/io5";
+// import { useState } from 'react';
+// import { PrivateRoute } from '../../PrivateRoute/PrivateRoute';
 
-
+type LoginFormProps = {
+    onLoginSuccess: () => void;
+    isAuth: boolean;
+  }
 
 const initialValues = {
     email: '',
@@ -27,14 +33,17 @@ const schema = yup.object().shape({
 });
 
 
-export const LoginForm = () => {
-
+export const LoginForm: React.FC<LoginFormProps> = ({onLoginSuccess, isAuth}) => {
+    // const [logedIn, setLogedIn] = useState<boolean>(false)
 
     const handleLogInSubmit = (values: any) => {
         // const { email, password } = values;
+        console.log(values)
 
-       console.log(values)
+        onLoginSuccess()
     };
+
+    if(isAuth) return <Navigate to='/' />
     return (
         <Formik
             initialValues={initialValues}
@@ -43,9 +52,9 @@ export const LoginForm = () => {
             validateOnBlur={true}
             onSubmit={handleLogInSubmit}
         >
-            {({ values, touched}) => (
-                 <Form className={styles.form}>
-                    <div className={styles.inputWrapper}>
+            {({ values, touched }) => (
+                <Form className={styles.form}>
+                    {/* <div className={styles.inputWrapper}> */}
                     <Field
                         type="email"
                         id="email"
@@ -56,8 +65,8 @@ export const LoginForm = () => {
                         className={styles.loginInput}
                     />
 
-                        <ErrorMessage name="email" component="div" className={styles.errorMessage} />
-                  
+                    <ErrorMessage name="email" component="div" className={styles.errorMessage} />
+
                     <Field
                         type="password"
                         id="password"
@@ -66,13 +75,13 @@ export const LoginForm = () => {
                         placeholder="Password"
                         autoComplete="off"
                         className={styles.loginInput}
-                        
+
                     />
                     {touched.password && values.password && <IoEyeOffOutline className={styles.eyeIcon} />}
 
                     <ErrorMessage name="password" component="div" className={styles.errorMessage} />
-                    </div>
-                  
+                    {/* </div> */}
+
                     <button type='submit'>Log in</button>
                 </Form>
             )}

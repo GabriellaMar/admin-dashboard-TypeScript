@@ -7,9 +7,12 @@ import { Container } from "../../components/Container/Container";
 import { LoginForm } from "../../components/LoginPage/LoginForm/LoginForm";
 import useMediaQuery from '../../hooks/useMediaQuery';
 
+type LoginProps = {
+  onLoginSuccess: () => void ;
+  isAuth: boolean;
+}
 
-
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC<LoginProps>= ({ onLoginSuccess, isAuth}) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
 
   return (
@@ -22,7 +25,7 @@ const LoginPage: React.FC = () => {
             <h1 className={styles.tittle}>Your medication, delivered Say goodbye to all <span>your healthcare</span> worries with us</h1>
             <img className={styles.loginPageImg} src={isAboveMediumScreens ? bigPill : smallPill} alt="white pill" />
           </div>
-          <LoginForm />
+          <LoginForm  onLoginSuccess={ onLoginSuccess} isAuth={isAuth}/>
         </div>
       </main>
     </Container>

@@ -1,14 +1,30 @@
 import { Link } from "react-router-dom";
 import styles from './Header.module.scss'
-import logo from '../../assets/logo.png'
+import { RxHamburgerMenu } from "react-icons/rx";
+
+import bigLogo from '../../assets/big-dashboard-logo@1x.png'
+import smallLogo from '../../assets/small-dashboard-logo@2x.png'
+import useMediaQuery from "../../hooks/useMediaQuery";
+import { Container } from "../Container/Container";
+
 export const Header: React.FC = () => {
+    const isAboveMediumScreens = useMediaQuery("(min-width: 768px)");
     return (
-        <div className={styles.header}>
-            <img src={logo} />
-            <ul>
-                <li><Link to="/"> First Page</Link></li>
-                <li><Link to="/second"> Second Page</Link></li>
-            </ul>
-        </div>
+        <Container >
+        <header className={styles.header}>
+          <RxHamburgerMenu className={styles.burgerIcon} />
+          {/* <Link to = '/'> */}
+          <img  src={isAboveMediumScreens ?  bigLogo  : smallLogo} alt="Logo image" />
+          {/* </Link> */}
+          <div>
+            <h2>Medicine store</h2>
+            <div className={styles.linkWrapper}>
+            <Link to='/dashboard' className={styles.link}>Dashboard | </Link>
+            <p>vendor@gmail.com</p>
+            </div>
+          </div>
+           
+        </header>
+        </Container>
     );
 }
