@@ -1,11 +1,14 @@
 @use '../../../styles/shared';
 .header {
-display: flex;
-align-items: center;
-gap: 20px;
-padding: 17px 0px;
+border-bottom: 1px solid rgba(29, 30, 33, 0.1);
 
+}
 
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 17px 0px;
 }
 
 .burgerIcon{
