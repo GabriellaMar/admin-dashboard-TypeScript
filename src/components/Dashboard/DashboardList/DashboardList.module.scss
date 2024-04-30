@@ -1,0 +1,31 @@
+.dashboardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.dashboardItem{
+    display: flex;
+    padding: 14px;
+    width: 157px;
+    height: 98px;
+    border:  1px solid rgba(29, 30, 33, 0.1);
+    border-radius: 8px;
+    background-color: white;
+
+    div {
+        display: flex;
+        gap: 10px;
+    }
+    @media (min-width: 768px) {
+        width: 221px;
+        height: 108px;
+       
+      }
+      @media (min-width: 1440px) {
+        width: 240px;
+        
+      }
+
+}

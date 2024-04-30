@@ -1,5 +1,10 @@
+import { Container } from "../Container/Container"
+import { DashboardList } from "./DashboardList/DashboardList"
+
 export const Dashboard = ()=>{
     return (
-        <div> ТУТ БУДЕ ДАШБОРД</div>
+        <Container> 
+            <DashboardList />
+        </Container>
     )
 }
