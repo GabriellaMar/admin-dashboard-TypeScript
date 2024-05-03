@@ -6,8 +6,8 @@ import { IoCloseOutline } from "react-icons/io5";
 import bigLogo from '../../assets/big-dashboard-logo@1x.png'
 import smallLogo from '../../assets/small-dashboard-logo@2x.png'
 import useMediaQuery from "../../hooks/useMediaQuery";
-// import { Container } from "../Container/Container";
-import { SideBarList } from "../SideBar/SideBarList";
+//  import { Container } from "../Container/Container";
+import { SideBarList } from "../SideBar/SideBarList/SideBarList";
 import { useState } from "react";
 
 // type HeaderProps = {

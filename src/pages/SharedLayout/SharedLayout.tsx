@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 // import { Container } from "../../components/Container/Container";
-import { Header } from "../../components/Header/Header";
+import { Header } from "../../components/Header";
 import { Outlet } from "react-router";
  import styles from "./SharedLayout.module.scss"
 import { SideBar } from "../../components/SideBar";

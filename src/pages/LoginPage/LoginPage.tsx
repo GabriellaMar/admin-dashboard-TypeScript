@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 import smallPill from '../../assets/white-round-pill.png'
 import bigPill from '../../assets/big-white-round-pill.png'
 import styles from './LoginPage.module.scss'
-import { Container } from "../../components/Container/Container";
+import { Container } from "../../components/Container";
 import { LoginForm } from "../../components/LoginPage/LoginForm/LoginForm";
 import useMediaQuery from '../../hooks/useMediaQuery';
 
